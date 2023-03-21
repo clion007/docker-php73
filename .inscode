@@ -1,0 +1,4 @@
+run = "cowsay 欢迎来到 InsCode"
+
+[nix]
+channel = "stable-22_11"
