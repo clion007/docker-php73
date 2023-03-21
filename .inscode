@@ -1,4 +1,7 @@
-run = "cowsay 欢迎来到 InsCode"
+run = "php -S 0.0.0.0:8000 -t ."
+
+entrypoint = "index.php"
 
 [nix]
 channel = "stable-22_11"
+

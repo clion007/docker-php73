@@ -1,5 +1,5 @@
 { pkgs }: {
-    deps = [
-        pkgs.cowsay
-    ];
+	deps = [
+		pkgs.php82
+	];
 }
