@@ -5,12 +5,14 @@ FROM linuxserver/baseimage-alpine:3.19
 # set version label
 LABEL maintainer="Clion Nieh <76857061@qq.com>"
 
+ENV BRANCH v3.12
+
 # install packages
 RUN \
   echo "**** install build packages ****" && \
   apk add --no-cache \
-    --repository=http://dl-cdn.alpinelinux.org/alpine/v3.12/main \
-    --repository=http://dl-cdn.alpinelinux.org/alpine/v3.12/community \
+    --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/main \
+    --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/community \
     openssl \
     icu \
     php7 \
@@ -58,7 +60,7 @@ RUN \
   sed -i "s#group = nobody.*#group = abc#g" \
     /etc/php7/php-fpm.d/www.conf && \
   echo "**** install php composer ****" && \
-  apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/v3.12/community  composer=1.10.19-r0
+  apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/community  composer=1.10.19-r0
 
 # add local files
 COPY root/ /
