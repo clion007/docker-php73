@@ -3,10 +3,6 @@ name: PHP73 Docker Image Build
 on:
   workflow_dispatch:
   repository_dispatch:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
 
 jobs:
 
