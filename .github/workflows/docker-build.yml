@@ -27,14 +27,6 @@ jobs:
         username: ${{ aliyun.repository_owner }}
         password: ${{ secrets.CR_PAT }}
 
-    - name: Marker version and time
-      id: getVersion
-      run: |
-        sed -i "s@COMMIT_HASH@$(git rev-parse --short HEAD)@" root/Php73
-        sed -i "s@DATE_TIME@$(date +"%Y/%m/%d %H:%M")@" root/Php73
-        cat root/Php73
-        echo "::set-output name=time::$(date +"%Y%m%d%H%M")"
-
     - name: Build and push
       uses: docker/build-push-action@v5
       with:
