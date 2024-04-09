@@ -1,4 +1,4 @@
-name: Docker Image Build
+name: PHP73 Docker Image Build
 
 on:
   push:
@@ -14,5 +14,5 @@ jobs:
 
     steps:
     - uses: clion007/docker-php73@master
-    - name: Build the Docker image
+    - name: Build the PHP73 Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
