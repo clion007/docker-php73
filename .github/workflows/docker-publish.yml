@@ -34,5 +34,5 @@ jobs:
         context: .
         push: true
         tags: |
-          clion007/docker-php73
-          registry.cn-chengdu.aliyuncs.com/clion007/docker-php73
+          clion007/docker-php73:latest
+          registry.cn-chengdu.aliyuncs.com/clion007/docker-php73:latest
