@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM linuxserver/baseimage-alpine:3.19
+FROM ghcr.io/linuxserver/baseimage-alpine:3.19
 
 # set version label
 LABEL maintainer="Clion Nieh <76857061@qq.com>"
