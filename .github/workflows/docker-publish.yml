@@ -27,5 +27,5 @@ jobs:
         context: .
         push: true
         tags: |
-         clion/php73:latest
-         registry.cn-chengdu.aliyuncs.com/clion/php73:latest
+          clion/php73:latest
+          registry.cn-chengdu.aliyuncs.com/clion/php73:latest
