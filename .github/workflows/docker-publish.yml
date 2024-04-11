@@ -26,4 +26,7 @@ jobs:
         file: Dockerfile
         context: .
         push: true
-        tags: registry.cn-chengdu.aliyuncs.com/clion007/docker-php73:latest
+        tags: 
+        tags: |
+          clion007/docker-php73:latest
+          registry.cn-chengdu.aliyuncs.com/clion007/docker-php73:latest
