@@ -20,13 +20,12 @@ jobs:
         username: ${{ secrets.ALIYUN_USER }}
         password: ${{ secrets.ALIYUN_TOKEN }}
 
-    - name: Build and push Docker images
+    - name: Build and Push Docker images
       uses: docker/build-push-action@v5
       with:
         file: Dockerfile
         context: .
         push: true
-        tags: 
         tags: |
           clion007/docker-php73:latest
           registry.cn-chengdu.aliyuncs.com/clion007/docker-php73:latest
