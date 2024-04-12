@@ -63,7 +63,7 @@ RUN \
   apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/community  composer=1.10.19-r0
 
 # add local files
-COPY root/ /
+COPY  --chmod=755 root/ /
   
 # ports and volumes
 EXPOSE 9000
