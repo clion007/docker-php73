@@ -46,7 +46,7 @@ RUN \
     php7-sodium \
     php7-sqlite3 \
     php7-xmlreader \
-    php7-xsl && \
+    php7-xsl \
     php7-pecl-xdebug && \
   echo "**** guarantee correct php version is symlinked ****" && \
   if [ "$(readlink /usr/bin/php)" != "php7" ]; then \
