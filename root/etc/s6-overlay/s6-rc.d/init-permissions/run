@@ -3,7 +3,8 @@
 
 # permissions
 lsiown -R abc:abc \
-    /config/php
+    /config/keys \
+    /config/php \
     /config/log
 
 lsiown abc:abc \
