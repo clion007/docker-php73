@@ -53,7 +53,7 @@ RUN \
     ln -s /usr/bin/php7 /usr/bin/php; \
   fi && \
   echo "**** configure php ****" && \
-  sed -i "s#;error_log = log/php7/error.log.*#error_log = /config/log/php/php7/error.log#g" \
+  sed -i "s#;error_log = log/php7/error.log.*#error_log = /config/log/php/php73/error.log#g" \
     /etc/php7/php-fpm.conf && \
   sed -i "s#user = nobody.*#user = abc#g" \
     /etc/php7/php-fpm.d/www.conf && \
