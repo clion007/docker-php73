@@ -1,11 +1,11 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-alpine:3.19
+FROM alpine
 
 # set version label
 LABEL maintainer="Clion Nieh <76857061@qq.com>"
 
-ENV BRANCH v3.12
+ENV BRANCH v3.12 #The latest PHP7.3.33 and it's extensions contain in this repository in alpine
 
 # install packages
 RUN \
