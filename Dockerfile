@@ -6,7 +6,8 @@ FROM alpine
 LABEL maintainer="Clion Nieh <76857061@qq.com>"
 
 # environment settings
-ENV BRANCH v3.12 # The latest PHP7.3.33 and it's extensions contain in this version repository in alpine
+ENV BRANCH v3.12 
+# The latest PHP7.3.33 and it's extensions contain in this version repository in alpine
 
 # install packages
 RUN \
