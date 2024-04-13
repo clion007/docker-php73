@@ -16,7 +16,7 @@
 ```
 docker run -d \
   --name=PHP73 \
-  --net='bridge' `#optional` \
+  --net='bridge' \
   --ip='*.*.*.*' `#optional` \
   -e TZ="Asia/Shanghai" \
   -e 'UMASK'='022' \
