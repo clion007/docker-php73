@@ -1,21 +1,37 @@
 # Docker-php73-fpm-alpine3.19
 ### This image is builded base on latest alpine v3.19, modifyed the config to suport connect from network.
 
-# Application Setup
+## Application Setup
 * Add your web files to /config/www for hosting.
 * Modify the php files under /config/php/php73 as needed
 * Protip: This container is need combined with a sql server, e.g. mariadb and a webserver, e.g. nginx
 
-# Parameters
+## Parameters
 * -v /config	Contains your www content and all relevant configuration files.
-* -e PUID=1000	for UserID - see below for explanation
-* -e PGID=1000	for GroupID - see below for explanation
+* -e PUID=99	for UserID - see below for explanation
+* -e PGID=100	for GroupID - see below for explanation
 * -e TZ=Etc/UTC	specify a timezone to use, see this list.
 
-# PHP-fpm version
+## Docker cli
+```
+docker run -d \
+  --name=PHP73 \
+  --net='brige' `#optional` \
+  --ip='*.*.*.*' `#optional` \
+  -e TZ="Asia/Shanghai" \
+  -e 'UMASK'='022' \
+  -e PUID=99 \
+  -e PGID=100 \
+  -p 9000:9000 `#optional` \
+  -v /path/to/localconfigdir:/config:'rw' \
+  --restart unless-stopped \
+  registry.cn-chengdu.aliyuncs.com/clion/php73:latest
+```
+
+## PHP-fpm version
 ### v7.3.33
 
-# Modules installed
+## Modules installed
 *    php7-common
 *    php7-ctype
 *    php7-curl
@@ -48,5 +64,5 @@
 *    php7-xmlreader
 *    php7-xsl
 
-# Composer version
+## Composer version
 ### v1.10.19
