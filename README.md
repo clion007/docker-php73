@@ -1,15 +1,19 @@
-#docker-php73-fpm-alpine3.19
+#Docker-php73-fpm-alpine3.19
+This image is builded base on latest alpine v3.19, modifyed the config to suport connect from network.
 
 #Application Setup
 Add your web files to /config/www for hosting.
-Modify the nginx, php and site config files under /config as needed
-Protip: This container is best combined with a sql server, e.g. mariadb
+Modify the php files under /config/php/php73 as needed
+Protip: This container is need combined with a sql server, e.g. mariadb and a webserver, e.g. nginx
 
 #Parameters
 -v /config	Contains your www content and all relevant configuration files.
 -e PUID=1000	for UserID - see below for explanation
 -e PGID=1000	for GroupID - see below for explanation
 -e TZ=Etc/UTC	specify a timezone to use, see this list.
+
+#PHP-fpm version
+v7.3.33
 
 #Modules installed
     php7-common
