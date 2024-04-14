@@ -20,8 +20,8 @@ docker run -d \
   --ip='*.*.*.*' `#optional` \
   -e TZ="Asia/Shanghai" \
   -e 'UMASK'='022' \
-  -e PUID=99 \
-  -e PGID=100 \
+  -e PUID=1000 \
+  -e PGID=1000 \
   -p 9000:9000 `#optional` \
   -v /path/to/localconfigdir:/config:'rw' \
   --restart unless-stopped \
