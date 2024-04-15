@@ -79,12 +79,9 @@ COPY  --chmod=755 root/ /usr/local/bin
 
 ENTRYPOINT ["init"]
 
-# Override stop signal to stop process gracefully
-STOPSIGNAL SIGQUIT
-
 # ports and volumes
 EXPOSE 9000
 
 VOLUME /config
 
-CMD ["php-fpm7"]
+CMD ["-F","php-fpm7"]
