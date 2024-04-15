@@ -11,7 +11,7 @@ ENV BRANCH v3.12
 
 # install packages
 RUN set -eux; \
-  echo "**** install build packages ****"; \
+  #install build packages
   apk add --no-cache \
     --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/main \
     --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/community \
