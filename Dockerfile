@@ -84,4 +84,4 @@ EXPOSE 9000
 
 VOLUME /config
 
-CMD ["-F","php-fpm7"]
+CMD ["php-fpm7"]
