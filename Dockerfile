@@ -1,20 +1,20 @@
 # syntax=docker/dockerfile:1
 
-FROM alpine
+FROM ghcr.io/linuxserver/baseimage-alpine:3.19
 
 # set version label
 LABEL maintainer="Clion Nieh <76857061@qq.com>"
 
-# environment settings
-ENV BRANCH v3.12 
-# The latest PHP7.3.33 and it's extensions contain in this version repository in alpine
+ENV BRANCH v3.12
 
 # install packages
-RUN set -eux; \
-  #install build packages
+RUN \
+  echo "**** install build packages ****" && \
   apk add --no-cache \
     --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/main \
     --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/community \
+    openssl \
+    icu \
     php7 \
     php7-common \
     php7-ctype \
@@ -47,44 +47,28 @@ RUN set -eux; \
     php7-sqlite3 \
     php7-xmlreader \
     php7-xsl \
-    php7-pecl-xdebug \
-    composer=1.10.19-r0; \
-  \
-  # Make dir for config and data
-  mkdir -p /config; \
-  \
-  # Add user for php process
-  adduser -u 82 -D -S -G www-data www-data; \
-  \
-  chown www-data:www-data /config; \
-  \
-  # guarantee correct php version is symlinked
+    php7-pecl-xdebug && \
+  echo "**** guarantee correct php version is symlinked ****" && \
   if [ "$(readlink /usr/bin/php)" != "php7" ]; then \
-    rm -rf /usr/bin/php; \
+    rm -rf /usr/bin/php && \
     ln -s /usr/bin/php7 /usr/bin/php; \
-  fi; \
-  \
-  # configure php
+  fi && \
+  echo "**** configure php ****" && \
   sed -i "s#;error_log = log/php7/error.log.*#error_log = /config/log/php/php73/error.log#g" \
-    /etc/php7/php-fpm.conf; \
-  sed -i "s#user = nobody.*#user = www-data#g" \
-    /etc/php7/php-fpm.d/www.conf; \
-  sed -i "s#group = nobody.*#group = www-data#g" \
-    /etc/php7/php-fpm.d/www.conf; \
+    /etc/php7/php-fpm.conf && \
+  sed -i "s#user = nobody.*#user = abc#g" \
+    /etc/php7/php-fpm.d/www.conf && \
+  sed -i "s#group = nobody.*#group = abc#g" \
+    /etc/php7/php-fpm.d/www.conf && \
   sed -i "s#listen = 127.0.0.1:9000.*#listen = 0.0.0.0:9000#g" \
-    /etc/php7/php-fpm.d/www.conf
+    /etc/php7/php-fpm.d/www.conf && \
+  echo "**** install php composer ****" && \
+  apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/community  composer=1.10.19-r0
 
 # add local files
-COPY  --chmod=755 root/ /usr/local/bin
-
-ENTRYPOINT ["init"]
-
-# Override stop signal to stop process gracefully
-STOPSIGNAL SIGQUIT
-
+COPY  --chmod=755 root/ /
+  
 # ports and volumes
 EXPOSE 9000
 
 VOLUME /config
-
-CMD ["php-fpm7"]
