@@ -8,7 +8,7 @@ LABEL maintainer="Clion Nieh <76857061@qq.com>"
 ENV BRANCH v3.12
 
 # install packages
-RUN \
+RUN set -eux; \
   echo "**** install build packages ****" && \
   apk add --no-cache \
     --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/main \
