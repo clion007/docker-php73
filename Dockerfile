@@ -10,7 +10,7 @@ ENV BRANCH v3.12
 # The latest PHP7.3.33 and it's extensions contain in this version repository in alpine
 
 # install packages
-RUN set -eux; \
+RUN \
   #install build packages
   apk add --no-cache \
     --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/main \
