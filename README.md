@@ -8,9 +8,9 @@
 
 ## Parameters
 * -v /config	Contains your www content and all relevant configuration files.
-* -e PUID=99	for UserID - see below for explanation
-* -e PGID=100	for GroupID - see below for explanation
-* -e TZ=Etc/UTC	specify a timezone to use, see this list.
+* -e PUID=1000	for UserID - see below for explanation
+* -e PGID=1000	for GroupID - see below for explanation
+* -e TZ="Asia/Shanghai"	specify a timezone to use.
 
 ## Docker cli
 ```
