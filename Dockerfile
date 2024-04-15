@@ -15,6 +15,7 @@ RUN set -eux; \
   apk add --no-cache \
     --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/main \
     --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/community \
+    openssl \
     php7 \
     php7-common \
     php7-ctype \
