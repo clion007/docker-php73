@@ -76,7 +76,7 @@ RUN set -eux && \
 # add local files
 COPY  --chmod=755 root/ /usr/local/bin
 
-ENTRYPOINT ["docker-php-entrypoint"]
+ENTRYPOINT ["init"]
 
 # Override stop signal to stop process gracefully
 STOPSIGNAL SIGQUIT
