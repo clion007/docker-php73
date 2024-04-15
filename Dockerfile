@@ -10,7 +10,7 @@ ENV BRANCH v3.12
 # The latest PHP7.3.33 and it's extensions contain in this version repository in alpine
 
 # install packages
-RUN \
+RUN set -eux; \
   #install build packages
   apk add --no-cache \
     --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/main \
@@ -54,7 +54,9 @@ RUN \
   mkdir -p /config; \
   \
   # Add user for php process
-  adduser -u 82 -D -S -G www-data -d /config www-data; \
+  adduser -u 82 -D -S -G www-data www-data; \
+  \
+  chown www-data:www-data /config; \
   \
   # guarantee correct php version is symlinked
   if [ "$(readlink /usr/bin/php)" != "php7" ]; then \
