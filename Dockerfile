@@ -51,7 +51,7 @@ RUN set -eux; \
     composer=1.10.19-r0; \
   \
   # Add user for php process
-  adduser -u 82 -D -S -G www-data -d /config www-data; \
+  adduser -u 82 -S -G www-data -d /config -s /bin/false www-data; \
   \
   # Make dir for config and data
   mkdir -p /config; \
