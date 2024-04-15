@@ -9,7 +9,7 @@ ENV BRANCH v3.12
 
 # install packages
 RUN set -eux; \
-  echo "**** install build packages ****" && \
+  # install build packages
   apk add --no-cache \
     --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/main \
     --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/community \
@@ -47,23 +47,24 @@ RUN set -eux; \
     php7-sqlite3 \
     php7-xmlreader \
     php7-xsl \
-    php7-pecl-xdebug && \
-  echo "**** guarantee correct php version is symlinked ****" && \
+    php7-pecl-xdebug \
+    composer=1.10.19-r0; \
+  \
+  # guarantee correct php version is symlinked
   if [ "$(readlink /usr/bin/php)" != "php7" ]; then \
-    rm -rf /usr/bin/php && \
+    rm -rf /usr/bin/php; \
     ln -s /usr/bin/php7 /usr/bin/php; \
-  fi && \
-  echo "**** configure php ****" && \
+  fi; \
+  \
+  # configure php
   sed -i "s#;error_log = log/php7/error.log.*#error_log = /config/log/php/php73/error.log#g" \
-    /etc/php7/php-fpm.conf && \
+    /etc/php7/php-fpm.conf; \
   sed -i "s#user = nobody.*#user = abc#g" \
-    /etc/php7/php-fpm.d/www.conf && \
+    /etc/php7/php-fpm.d/www.conf; \
   sed -i "s#group = nobody.*#group = abc#g" \
-    /etc/php7/php-fpm.d/www.conf && \
+    /etc/php7/php-fpm.d/www.conf; \
   sed -i "s#listen = 127.0.0.1:9000.*#listen = 0.0.0.0:9000#g" \
-    /etc/php7/php-fpm.d/www.conf && \
-  echo "**** install php composer ****" && \
-  apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/community  composer=1.10.19-r0
+    /etc/php7/php-fpm.d/www.conf
 
 # add local files
 COPY  --chmod=755 root/ /
