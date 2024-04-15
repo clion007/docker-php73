@@ -71,7 +71,7 @@ RUN set -eux && \
   sed -i "s#group = nobody.*#group = www-data#g" \
     /etc/php7/php-fpm.d/www.conf && \
   sed -i "s#listen = 127.0.0.1:9000.*#listen = 0.0.0.0:9000#g" \
-    /etc/php7/php-fpm.d/www.conf && \
+    /etc/php7/php-fpm.d/www.conf
 
 # add local files
 COPY  --chmod=755 root/ /usr/local/bin
