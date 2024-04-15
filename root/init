@@ -29,11 +29,11 @@ rm -rf /etc/php7/conf.d/www2.conf
 ln -s /config/php/php73/www2.conf /etc/php7/php-fpm.d/www2.conf
 
 # permissions
-lsiown -R www-data:www-data \
+chown -R www-data:www-data \
     /config/php \
     /config/log
 
-lsiown www-data:www-data \
+chown www-data:www-data \
     /config/www
 
 # first arg is `-f` or `--some-option`
