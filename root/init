@@ -47,4 +47,4 @@ fi
 #    exec su-exec www-data "$0" "$@"
 #fi
 
-exec "$@"
+exec "$@" -F
