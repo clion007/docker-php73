@@ -16,6 +16,7 @@ RUN set -eux; \
     --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/main \
     --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/community \
     openssl \
+    icu \
     php7 \
     php7-common \
     php7-ctype \
