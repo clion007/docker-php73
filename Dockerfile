@@ -80,7 +80,7 @@ RUN set -eux; \
 COPY  --chmod=755 root/ /usr/local/bin
 
 # set entrypoint
-ENTRYPOINT ["init"]
+ENTRYPOINT ["init","-F"]
 
 # ports and volumes
 EXPOSE 9000
