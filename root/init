@@ -36,9 +36,15 @@ chown -R www-data:www-data \
 chown www-data:www-data \
     /config/www
 
-# first arg is `-f` or `--some-option`
-if [ "${1#-}" != "$1" ]; then
+# first arg is `-f` or `--some-option` or `something.conf`
+if [ "${1#-}" != "$1" || [ "${1%.conf}" != "$1" ]; then
 	set -- php-fpm7 "$@"
+fi
+
+# allow the container to be started with `--user`
+if [ "$1" = 'php-fpm7' -a "$(id -u)" = '0' ]; then
+    find . \! -user www-data -exec chown www-data '{}' +
+    exec gosu www-data "$0" "$@"
 fi
 
 exec "$@"
