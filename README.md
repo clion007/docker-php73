@@ -1,5 +1,5 @@
 # Docker-php73
-### This image is builded base on latest alpine v3.19, modifyed the config to suport connect from network.
+### This image is builded base on latest alpine v3.19 with S6, modifyed the config to suport connect from network.
 
 ## Application Setup
 * Add your web files to /config/www for hosting.
