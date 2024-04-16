@@ -25,7 +25,7 @@ docker run -d \
   -p 9000:9000 `#optional` \
   -v /path/to/localconfigdir:/config:'rw' \
   --restart unless-stopped \
-  registry.cn-chengdu.aliyuncs.com/clion/php73:latest
+  registry.cn-chengdu.aliyuncs.com/clion/php73:slim
 ```
 
 ## PHP-fpm version
