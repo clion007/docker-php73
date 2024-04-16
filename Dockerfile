@@ -80,10 +80,10 @@ RUN set -eux; \
 COPY  --chmod=755 root/ /usr/local/bin
 
 # set entrypoint
-ENTRYPOINT ["init","-F"]
+ENTRYPOINT ["init"]
 
 # ports and volumes
 EXPOSE 9000
 VOLUME /config
 
-CMD ["php-fpm7"]
+CMD ["-F"]
