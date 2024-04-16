@@ -37,7 +37,7 @@ chown www-data:www-data \
     /config/www
 
 # first arg is `-f` or `--some-option` or `something.conf`
-if [ "${1#-}" != "$1" || "${1%.conf}" != "$1" ]; then
+if [ "${1#-}" != "$1" ] || [ "${1%.conf}" != "$1" ]; then
 	set -- php-fpm7 "$@"
 fi
 
