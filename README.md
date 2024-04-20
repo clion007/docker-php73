@@ -1,5 +1,5 @@
 # clion/php73
-#### This image is builded base on latest alpine v3.19, modifyed the config to suport connect from network.
+This image is builded base on latest alpine v3.19, modifyed the config to suport connect from network.
 
 ## Application Setup
 * Add your web files to /config/www for hosting.
@@ -29,7 +29,7 @@ docker run -d \
 ```
 
 ## PHP-fpm version
-### v7.3.33
+v7.3.33
 
 ## Modules installed
 *    php7-common
@@ -65,4 +65,4 @@ docker run -d \
 *    php7-xsl
 
 ## Composer version
-### v1.10.19
+v1.10.19
