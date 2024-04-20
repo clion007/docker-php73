@@ -1,4 +1,4 @@
-# Docker-php73
+# clion/php73
 ### This image is builded base on latest alpine v3.19 with S6-overlay, modifyed the config to suport connect from network.
 
 ## Application Setup
