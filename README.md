@@ -23,7 +23,7 @@ docker run -d \
   -e PUID=1000 \
   -e PGID=1000 \
   -p 9000:9000 `#optional` \
-  -v /path/to/localconfigdir:/config:'rw' \
+  -v /path/to/config:/config:'rw' \
   --restart unless-stopped \
   registry.cn-chengdu.aliyuncs.com/clion/php73:latest
 ```
