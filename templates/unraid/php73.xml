@@ -4,7 +4,7 @@
   <Repository>registry.cn-chengdu.aliyuncs.com/clion/php73:slim</Repository>
   <Registry/>
   <Network>vnet</Network>
-  <MyIP>10.7.8.18</MyIP>
+  <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://github.com/clion007/docker-jellyfin/issues/new/choose</Support>
@@ -21,8 +21,8 @@
   <DonateText/>
   <DonateLink/>
   <Requires/>
-  <Config Name="&#x914D;&#x7F6E;&#x8DEF;&#x5F84;" Target="/config" Default="/mnt/user/appdata/webserver" Mode="rw" Description="PHP7.3&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5B58;&#x653E;&#x5916;&#x90E8;&#x8DEF;&#x5F84;" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/webserver</Config>
+  <Config Name="&#x914D;&#x7F6E;&#x8DEF;&#x5F84;" Target="/config" Default="" Mode="rw" Description="PHP7.3&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5B58;&#x653E;&#x5916;&#x90E8;&#x8DEF;&#x5F84;" Type="Path" Display="always" Required="true" Mask="false">/path/to/php73/config</Config>
   <Config Name="UMASK" Target="UMASK" Default="022" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">022</Config>
-  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
-  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
+  <Config Name="PUID" Target="PUID" Default="1000" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
+  <Config Name="PGID" Target="PGID" Default="1000" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
 </Container>
