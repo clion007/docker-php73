@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>PHP73</Name>
+  <Repository>registry.cn-chengdu.aliyuncs.com/clion/php73:slim</Repository>
+  <Registry/>
+  <Network>vnet</Network>
+  <MyIP>10.7.8.18</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/clion007/docker-jellyfin/issues/new/choose</Support>
+  <Project>https://github.com/clion007/docker-php73</Project>
+  <Overview>PHP7.3.33 based by Alpine3.19 core from linuxserver.io with multiple extends and composer tool.</Overview>
+  <Category>Network:Web</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/clion007/docker-php73/master/templates/unraid/php73.xml</TemplateURL>
+  <Icon>https://logos-download.com/wp-content/uploads/2016/09/PHP_logo.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1714273102</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="&#x914D;&#x7F6E;&#x8DEF;&#x5F84;" Target="/config" Default="/mnt/user/appdata/webserver" Mode="rw" Description="PHP7.3&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5B58;&#x653E;&#x5916;&#x90E8;&#x8DEF;&#x5F84;" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/webserver</Config>
+  <Config Name="UMASK" Target="UMASK" Default="022" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">022</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
+</Container>
