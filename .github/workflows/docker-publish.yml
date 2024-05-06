@@ -1,4 +1,4 @@
-name: PHP73 Docker Image Publish
+name: PHP73 Docker Image with S6 Publish
 
 on:
   workflow_dispatch:
