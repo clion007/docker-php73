@@ -2,7 +2,6 @@ name: PHP73 Docker Image with S6 Publish
 
 on:
   workflow_dispatch:
-  repository_dispatch:
 
 jobs:
   publish:
