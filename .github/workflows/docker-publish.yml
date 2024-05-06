@@ -33,5 +33,5 @@ jobs:
         context: .
         push: true
         tags: |
-          clion007/php73:slim
+          clion007/php73
           registry.cn-chengdu.aliyuncs.com/clion/php73:slim
