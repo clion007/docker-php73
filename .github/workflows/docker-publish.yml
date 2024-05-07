@@ -7,7 +7,6 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
 
     steps:
     - name: Checkout
@@ -35,3 +34,9 @@ jobs:
         tags: |
           clion007/php73
           registry.cn-chengdu.aliyuncs.com/clion/php73:slim
+      
+    - name: Delete workflow runs
+      uses: Mattraks/delete-workflow-runs@v2
+      with:
+        retain_days: 0
+        keep_minimum_runs: 2
