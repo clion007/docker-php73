@@ -1,9 +1,5 @@
 # syntax=docker/dockerfile:1
-
-FROM alpine
-
-# set version label
-LABEL maintainer="Clion Nieh <76857061@qq.com>"
+FROM clion007/alpine
 
 # environment settings
 ENV BRANCH v3.12 
@@ -80,11 +76,7 @@ RUN set -eux; \
 # add local files
 COPY  --chmod=755 root/ /usr/local/bin
 
-# set entrypoint
-ENTRYPOINT ["init"]
-
-# ports and volumes
+# volumes
 EXPOSE 9000
-VOLUME /config
 
 CMD ["-F"]
