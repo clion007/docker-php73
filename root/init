@@ -31,9 +31,7 @@ ln -s /config/php/php73/www2.conf /etc/php7/php-fpm.d/www2.conf
 # permissions
 chown -R www-data:www-data \
     /config/php \
-    /config/log
-
-chown www-data:www-data \
+    /config/log \
     /config/www
 
 # first arg is `-f` or `--some-option` or `something.conf`
