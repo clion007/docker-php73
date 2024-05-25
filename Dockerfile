@@ -74,7 +74,7 @@ RUN set -eux; \
     /etc/php7/php-fpm.d/www.conf
 
 # add local files
-COPY  --chmod=755 root/ /usr/local/bin
+COPY  --chmod=755 root/ /
 
 # ports
 EXPOSE 9000
