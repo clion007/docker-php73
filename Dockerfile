@@ -76,7 +76,7 @@ RUN set -eux; \
 # add local files
 COPY  --chmod=755 root/ /usr/local/bin
 
-# volumes
+# ports
 EXPOSE 9000
 
 CMD ["-F"]
