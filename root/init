@@ -2,13 +2,8 @@
 set -e
 
 # make folders if them doesn't exist
-if [[ ! -d /config/php/php73 ]]; then
-    mkdir -p /config/php/php73
-fi
-
-if [[ ! -d /config/log/php/php73 ]]; then
-    mkdir -p /config/log/php/php73
-fi
+mkdir -p /config/php/php73 \
+  /config/log/php/php73
 
 # create local php.ini if it doesn't exist, set local timezone
 if [[ ! -f /config/php/php73/php-local.ini ]]; then
