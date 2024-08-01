@@ -2,10 +2,5 @@
 # shellcheck shell=bash
 
 # make folders if them doesn't exist
-if [[ ! -d /config/php/php73 ]]; then
-    mkdir -p /config/php/php73
-fi
-
-if [[ ! -d /config/log/php/php73 ]]; then
-    mkdir -p /config/log/php/php73
-fi
+mkdir -p /config/php/php73 \
+  /config/log/php/php73
