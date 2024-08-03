@@ -24,6 +24,7 @@ docker run -d \
   -e PGID=1000 \
   -p 9000:9000 `#optional` \
   -v /path/to/localconfigdir:/config:'rw' \
+  -v /etc/localtime:/etc/localtime:ro \
   --restart unless-stopped \
   registry.cn-chengdu.aliyuncs.com/clion/php73:slim
 ```
