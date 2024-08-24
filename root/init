@@ -24,7 +24,7 @@ rm -rf /etc/php7/php-fpm.d/www2.conf
 ln -s /config/php/php73/www2.conf /etc/php7/php-fpm.d/www2.conf
 
 # permissions
-chown -R www-data:www-data \
+chown -R memcached:memcached \
     /config/php \
     /config/log
 
