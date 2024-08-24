@@ -49,6 +49,10 @@ RUN set -eux; \
     php7-pecl-xdebug \
     composer=1.10.19-r0; \
   \
+  apk add --no-cache --virtual .user-deps \
+    shadow \
+  ; \
+  \
   # Make dir for config and data
   mkdir -p /config; \
   \
@@ -72,7 +76,13 @@ RUN set -eux; \
   sed -i "s#group = nobody.*#group = www-data#g" \
     /etc/php7/php-fpm.d/www.conf; \
   sed -i "s#listen = 127.0.0.1:9000.*#listen = 0.0.0.0:9000#g" \
-    /etc/php7/php-fpm.d/www.conf
+    /etc/php7/php-fpm.d/www.conf; \
+  apk del --no-network .user-deps; \
+  rm -rf \
+      /var/cache/apk/* \
+      /var/tmp/* \
+      /tmp/* \
+  ;
 
 # add local files
 COPY  --chmod=755 root/ /
