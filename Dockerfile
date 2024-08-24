@@ -53,7 +53,7 @@ RUN set -eux; \
   mkdir -p /config; \
   \
   # Add user for php process
-  # adduser -u 100 -D -S -G www-data memcached; \
+  # adduser -u 100 -D -S -G memcached memcached; \
   # \
   chown memcached:memcached /config; \
   \
@@ -66,9 +66,9 @@ RUN set -eux; \
   # configure php
   sed -i "s#;error_log = log/php7/error.log.*#error_log = /config/log/php/php73/error.log#g" \
     /etc/php7/php-fpm.conf; \
-  sed -i "s#user = nobody.*#user = www-data#g" \
+  sed -i "s#user = nobody.*#user = memcached#g" \
     /etc/php7/php-fpm.d/www.conf; \
-  sed -i "s#group = nobody.*#group = www-data#g" \
+  sed -i "s#group = nobody.*#group = memcached#g" \
     /etc/php7/php-fpm.d/www.conf; \
   sed -i "s#listen = 127.0.0.1:9000.*#listen = 0.0.0.0:9000#g" \
     /etc/php7/php-fpm.d/www.conf; \
