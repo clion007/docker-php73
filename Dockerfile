@@ -49,18 +49,13 @@ RUN set -eux; \
     php7-pecl-xdebug \
     composer=1.10.19-r0; \
   \
-  apk add --no-cache --virtual .user-deps \
-    shadow \
-  ; \
-  \
   # Make dir for config and data
   mkdir -p /config; \
   \
   # Add user for php process
-  groupmod -g 101 www-data; \
-  adduser -u 100 -D -S -G www-data www-data; \
-  \
-  chown www-data:www-data /config; \
+  # adduser -u 100 -D -S -G www-data memcached; \
+  # \
+  chown memcached:memcached /config; \
   \
   # guarantee correct php version is symlinked
   if [ "$(readlink /usr/bin/php)" != "php7" ]; then \
@@ -77,7 +72,6 @@ RUN set -eux; \
     /etc/php7/php-fpm.d/www.conf; \
   sed -i "s#listen = 127.0.0.1:9000.*#listen = 0.0.0.0:9000#g" \
     /etc/php7/php-fpm.d/www.conf; \
-  apk del --no-network .user-deps; \
   rm -rf \
       /var/cache/apk/* \
       /var/tmp/* \
