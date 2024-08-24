@@ -53,7 +53,8 @@ RUN set -eux; \
   mkdir -p /config; \
   \
   # Add user for php process
-  adduser -u 82 -D -S -G www-data www-data; \
+  groupadd -g 101 www-data; \
+  adduser -u 100 -D -S -G www-data www-data; \
   \
   chown www-data:www-data /config; \
   \
